@@ -8,9 +8,9 @@
 
         public string LastName { get; set; }
 
-        public string Position { get; set; }
-
         public DateTime CheckedDate { get; set; }
+
+        public ICollection<Position> Positions { get; set; }
 
     }
 }
