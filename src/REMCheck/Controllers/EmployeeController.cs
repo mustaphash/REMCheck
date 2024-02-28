@@ -18,7 +18,6 @@ namespace REMCheck.Controllers
             _getEmployeeByIdQuery = getEmployeeByIdQuery;
         }
 
-        [HttpGet]
 
 
     }

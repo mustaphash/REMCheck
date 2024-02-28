@@ -9,7 +9,7 @@ namespace DAL.Configs
         public void Configure(EntityTypeBuilder<Evaluation> builder)
         {
 
-            builder.Property(x => x.Precent)
+            builder.Property(x => x.Percent)
                 .IsRequired();
 
             builder.Property(x => x.Description)
