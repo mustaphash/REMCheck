@@ -2,10 +2,10 @@
 {
     public class Evaluation : Employee
     {
-        public decimal Precent { get; set; }
+        public decimal Percent { get; set; }
 
         public string Description { get; set; }
 
-        public int EmployeeId { get; set; }
+        public Employee Employees { get; set; }
     }
 }

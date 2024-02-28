@@ -6,7 +6,7 @@
 
         public string Description { get; set; }
 
-        public int EmployeeId { get; set; }
+        public Employee Employees { get; set; }
 
     }
 }
