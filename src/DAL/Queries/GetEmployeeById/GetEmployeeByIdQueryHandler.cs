@@ -6,16 +6,16 @@ namespace DAL.Queries.GetEmployeeById
 {
     public class GetEmployeeByIdQueryHandler : IQueryHandler<GetEmployeeByIdQuery, Employee>
     {
-        private readonly REMContext _remContext;
+        private readonly REMContext _rEMContext;
 
-        public GetEmployeeByIdQueryHandler(REMContext remContext)
+        public GetEmployeeByIdQueryHandler(REMContext rEMContext)
         {
-            _remContext = remContext;
+            _rEMContext = rEMContext;
         }
 
         public async Task<Employee> HandleAsync(GetEmployeeByIdQuery query, CancellationToken cancellationToken = default)
         {
-            var employee = await _remContext.Employees.FirstOrDefaultAsync(e => e.Id == query.Id, cancellationToken);
+            var employee = await _rEMContext.Employees.FirstOrDefaultAsync(e => e.Id == query.Id, cancellationToken);
 
             return employee;
         }
