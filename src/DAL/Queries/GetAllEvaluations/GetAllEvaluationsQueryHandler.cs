@@ -4,11 +4,11 @@ using Microsoft.EntityFrameworkCore;
 
 namespace DAL.Queries.GetAllEvaluations
 {
-    public class GetAllEvaluationsQueryHandle : IQueryHandler<GetAllEvaluationsQuery, IList<Evaluation>>
+    public class GetAllEvaluationsQueryHandler : IQueryHandler<GetAllEvaluationsQuery, IList<Evaluation>>
     {
         private readonly REMContext _rEMContext;
 
-        public GetAllEvaluationsQueryHandle(REMContext rEMContext)
+        public GetAllEvaluationsQueryHandler(REMContext rEMContext)
         {
             _rEMContext = rEMContext;
         }

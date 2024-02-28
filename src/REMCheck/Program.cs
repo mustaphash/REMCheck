@@ -1,4 +1,9 @@
+using Core.Entities;
+using Core.Queries;
 using DAL;
+using DAL.Queries.GetAllEvaluations;
+using DAL.Queries.GetAllMistakes;
+using DAL.Queries.GetAllReports;
 using Microsoft.EntityFrameworkCore;
 
 var builder = WebApplication.CreateBuilder(args);
@@ -11,6 +16,10 @@ builder.Services.AddEndpointsApiExplorer();
 builder.Services.AddSwaggerGen();
 
 builder.Services.AddDbContext<REMContext>(x => x.UseSqlServer(builder.Configuration.GetConnectionString("DefaultConnectionStrings")));
+
+builder.Services.AddScoped<IQueryHandler<GetAllReportsQuery, IList<Report>>, GetAllReportsQueryHandler>();
+builder.Services.AddScoped<IQueryHandler<GetAllEvaluationsQuery, IList<Evaluation>>, GetAllEvaluationsQueryHandler>();
+builder.Services.AddScoped<IQueryHandler<GetAllMistakesQuery, IList<Mistake>>, GetAllMistakesQueryHandler>();
 
 var app = builder.Build();
 
