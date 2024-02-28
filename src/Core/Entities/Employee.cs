@@ -15,5 +15,7 @@
         public ICollection<Evaluation> Evaluations { get; set; }
 
         public ICollection<Report> Reports { get; set; }
+
+        public ICollection<Mistake> Mistakes { get; set; }
     }
 }
