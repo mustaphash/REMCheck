@@ -28,7 +28,7 @@ namespace REMCheck.Controllers
             _getAllMistakesQuery = getAllMistakesQuery;
         }
 
-        [HttpGet]
+        [HttpGet("getReports")]
         public async Task<IActionResult> GetAllReports()
         {
             IList<Report> reports = await _getAllReportsQuery.HandleAsync(new GetAllReportsQuery());
@@ -37,7 +37,7 @@ namespace REMCheck.Controllers
             return Ok(reportResponse);
         }
 
-        [HttpGet]
+        [HttpGet ("getEvaluation")]
         public async Task<IActionResult> GetAllEvaluations()
         {
             IList<Evaluation> evaluations = await _getAllEvaluationsQuery.HandleAsync(new GetAllEvaluationsQuery());
@@ -46,7 +46,7 @@ namespace REMCheck.Controllers
             return Ok(evaluationResponse);
         }
 
-        [HttpGet]
+        [HttpGet("getMistakes")]
         public async Task<IActionResult> GetAllMistakes()
         {
             IList<Mistake> mistakes = await _getAllMistakesQuery.HandleAsync(new GetAllMistakesQuery());
