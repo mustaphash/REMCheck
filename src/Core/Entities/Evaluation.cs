@@ -6,6 +6,6 @@
 
         public string Description { get; set; }
 
-        public Employee Employees { get; set; }
+        public ICollection<Employee> Employees { get; set; }
     }
 }
